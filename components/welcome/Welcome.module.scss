@@ -1,0 +1,38 @@
+@import 'styles/variables.scss';
+
+.container {
+    max-width: 350px;
+    margin: auto;
+    background-color: $white;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+    &__title {
+        color: $primary-text;
+        margin: 0 10px;
+        span {
+            color: $primary;
+        }
+        &__tokens {
+            color: $primary;
+        }
+    }
+    h1 {
+        margin: 2rem 0;
+    }
+    &__network {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        p {
+            padding: 10px;
+            text-align: center;
+            font-size: $small-font;
+            color: $primary-text;
+        }
+    }
+}

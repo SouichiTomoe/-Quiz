@@ -1,0 +1,61 @@
+@import 'styles/variables.scss';
+
+.container {
+    &__header {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    &__questions {
+        &__quest {
+            border: 1px solid #00000021;
+            border-radius: 4px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            align-items: center;
+
+            p {
+                text-align: center;
+                font-size: 14px;
+                font-weight: 100px;
+                color: $primary-text;
+                margin: 10px 5px;
+            }
+
+            img {
+                padding: 5px !important;
+            }
+        }
+        &__options {
+            margin: 10px 10px;
+            button {
+                margin: 5px 0;
+            }
+        }
+    }
+    &__footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        margin: 20px 10px;
+        &__block {
+            margin: 10px 0 20px 0;
+            div {
+                margin: 0 0 20px 0;
+            }
+        }
+        button {
+            width: 100%;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: $primary;
+        }
+    }
+}

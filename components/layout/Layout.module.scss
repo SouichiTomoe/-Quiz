@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+
+.container {
+    width: 45%;
+    max-width: 350px;
+    margin: auto;
+    background-color: $white;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+    @include device(iphone) {
+        width: 100%;
+    }
+}
