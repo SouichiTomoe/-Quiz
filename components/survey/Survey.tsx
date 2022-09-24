@@ -15,7 +15,7 @@ const Survey = ({ props }: any) => {
     let timer: any;
 
     useEffect(() => {
-        if (counter + 1 <= props.survey.questions.length) {
+        if (counter + 1 <= props?.survey?.questions.length) {
             timer = setTimeout(() => {
                 setAnswers([
                     ...answers,
@@ -36,11 +36,11 @@ const Survey = ({ props }: any) => {
     };
 
     const renderQuestion = () => {
-        if (counter + 1 <= props.survey.questions.length) {
+        if (counter + 1 <= props?.survey?.questions.length) {
             return (
                 <div>
                     <div className={styles.container__questions__quest}>
-                        <p>{props.survey.questions[counter].text}</p>
+                        <p>{props?.survey?.questions[counter].text}</p>
                         <Image
                             loader={(src) => props.survey.questions[counter].image}
                             src={props.survey.questions[counter].image}
@@ -110,7 +110,7 @@ const Survey = ({ props }: any) => {
     };
     return (
         <div className={styles.container}>
-            {counter + 1 <= props.survey.questions.length ? (
+            {counter + 1 <= props?.survey?.questions.length ? (
                 <div className={styles.container__questions}>{renderQuestion()}</div>
             ) : (
                 <div className={styles.container__footer}>

@@ -30,10 +30,7 @@ const Home: NextPage = (props: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const server = `${process.env.SERVER}/api/survey/`;
-    const res = await fetch(server);
-    const survey = await res.json();
-    return { props: { survey } };
+    return { props: {} };
 };
 
 export default Home;
