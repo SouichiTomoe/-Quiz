@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "@3rdweb/hooks": "^1.9.2",
+        "@3rdweb/react": "^1.9.3",
         "@ant-design/icons": "^4.7.0",
         "antd": "^4.23.2",
         "ethers": "^5.7.1",

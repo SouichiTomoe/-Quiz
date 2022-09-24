@@ -110,17 +110,6 @@ const Survey = ({ props }: any) => {
     };
     return (
         <div className={styles.container}>
-            <div className={styles.container__header}>
-                <h1>{props?.survey.title}</h1>
-                <Image
-                    loader={(src) => props?.survey?.image}
-                    src={props?.survey?.image}
-                    alt="survey_img"
-                    width="50"
-                    height="50"
-                    unoptimized={true}
-                />
-            </div>
             {counter + 1 <= props.survey.questions.length ? (
                 <div className={styles.container__questions}>{renderQuestion()}</div>
             ) : (

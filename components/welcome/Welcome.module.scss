@@ -34,5 +34,12 @@
             font-size: $small-font;
             color: $primary-text;
         }
+        &__header {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
     }
 }

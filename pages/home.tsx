@@ -14,7 +14,8 @@ const Home: NextPage = (props: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const res = await fetch(`http://localhost:3000/api/survey/`);
+    const server = process.env.SERVER;
+    const res = await fetch(`${server}/api/survey/`);
     const survey = await res.json();
     return { props: { survey } };
 };

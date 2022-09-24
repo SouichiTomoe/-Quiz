@@ -8,12 +8,8 @@ import style from './finished.module.scss';
 import Layout from '../components/layout/Layout';
 
 const Finished: NextPage = () => {
-    const { disconnectWallet, balance } = useWeb3();
+    const { balance } = useWeb3();
 
-    const disconnectMetaMaskWallet = async () => {
-        disconnectWallet();
-        Router.push('/');
-    };
     return (
         <Layout>
             <div className={style.container}>
@@ -30,8 +26,14 @@ const Finished: NextPage = () => {
                 >
                     Go to another survey
                 </Button>
-                <Button danger type="primary" onClick={disconnectMetaMaskWallet}>
-                    Desconect Wallet
+                <Button
+                    danger
+                    type="primary"
+                    onClick={() => {
+                        Router.push('/');
+                    }}
+                >
+                    Go Home
                 </Button>
             </div>
         </Layout>
