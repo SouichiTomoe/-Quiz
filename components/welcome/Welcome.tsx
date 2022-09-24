@@ -8,7 +8,7 @@ import style from './Welcome.module.scss';
 
 declare let window: any;
 
-const Welcome = () => {
+const Welcome = ({ props }: any) => {
     const { connectWallet, address, chainId, balance } = useWeb3();
     const { switchNetwork } = useSwitchNetwork();
 
@@ -57,6 +57,17 @@ const Welcome = () => {
         } else {
             return (
                 <div className={style.container__network}>
+                    <div className={style.container__network__header}>
+                        <h2>{props?.survey?.title}</h2>
+                        <Image
+                            loader={(src) => props?.survey?.image}
+                            src={props?.survey?.image}
+                            alt="survey_img"
+                            width="50"
+                            height="50"
+                            unoptimized={true}
+                        />
+                    </div>
                     <Button type="primary" onClick={() => Router.push('/home')}>
                         Go to Survey
                     </Button>
@@ -87,7 +98,7 @@ const Welcome = () => {
                     Connet to MetaMask
                 </Button>
             )}
-            <Image src="/assets/images/logo.jpg" alt="logo" width={350} height={350} />
+            <Image src="/assets/images/logo.jpg" alt="logo" width={350} height={300} />
             <a href="https://www.freepik.com/free-vector/registration-form-template-with-flat-design_3301472.htm#query=form&position=12&from_view=search">
                 Freepik
             </a>

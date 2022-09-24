@@ -18,6 +18,7 @@ const App = ({ Component, pageProps }) => {
     };
 
     return (
+        // @ts-ignore
         <ThirdwebWeb3Provider supportedChainIds={supportedChainIds} connectors={connectors}>
             <Component {...pageProps} />
         </ThirdwebWeb3Provider>
