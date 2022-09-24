@@ -14,10 +14,9 @@ const Home: NextPage = (props: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const server = new URL(`/api/survey/`, process.env.SERVER);
-    const res = await fetch(server);
+    const res = await fetch('https://quizchallenge-7mi44lokb-souichitomoe.vercel.app/api/survey');
     const survey = await res.json();
-    return { props: {} };
+    return { props: { survey } };
 };
 
 export default Home;
