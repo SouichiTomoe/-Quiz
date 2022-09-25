@@ -4,7 +4,7 @@ const surveyApi = (req, res) => {
     res.end(
         JSON.stringify({
             id: 1,
-            title: 'Sample Survey',
+            title: 'Daily Survey',
             image: 'https://48tools.com/wp-content/uploads/2015/09/shortlink.png',
             questions: [
                 {
@@ -24,36 +24,34 @@ const surveyApi = (req, res) => {
                     ],
                 },
                 {
-                    text: 'Question2',
-                    image:
-                        'https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg',
+                    text: 'What is your favority animal?',
+                    image: 'https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg',
                     lifetimeSeconds: 5,
                     options: [
                         {
-                            text: 'Opt1',
+                            text: 'Lion',
                         },
                         {
-                            text: 'Opt2',
+                            text: 'Dog',
                         },
                         {
-                            text: 'Opt',
+                            text: 'Cat',
                         },
                     ],
                 },
                 {
-                    text: 'Pregunta 2',
-                    image:
-                        'https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg',
-                    lifetimeSeconds: 5,
+                    text: 'What is your favorite food?',
+                    image: 'https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg',
+                    lifetimeSeconds: 6,
                     options: [
                         {
-                            text: 'Opt1',
+                            text: 'Pizza',
                         },
                         {
-                            text: 'Opt2',
+                            text: 'Hamburger',
                         },
                         {
-                            text: 'Opt',
+                            text: 'Soup',
                         },
                     ],
                 },
