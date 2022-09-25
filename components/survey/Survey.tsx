@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Router from 'next/router';
-import { Button } from 'antd';
+import { Button, Divider } from 'antd';
+import Timer from '../timer/Timer';
 import styles from './Survey.module.scss';
 import { ethers } from 'ethers';
 import abi from '../../abi/abi.json';
@@ -40,6 +41,7 @@ const Survey = ({ props }: any) => {
             return (
                 <div>
                     <div className={styles.container__questions__quest}>
+                        <Timer props={{ timer: props?.survey?.questions[counter].lifetimeSeconds }} />
                         <p>{props?.survey?.questions[counter].text}</p>
                         <Image
                             loader={(src) => props.survey.questions[counter].image}
@@ -80,6 +82,7 @@ const Survey = ({ props }: any) => {
                 <div className={styles.container__footer__block} key={i}>
                     <div>{`Question ${i + 1}: ${e.question}`}</div>
                     <div>{`Answer ${i + 1}: ${e.answer ? e.answer : 'No Answer'}`}</div>
+                    <Divider />
                 </div>
             );
         });
