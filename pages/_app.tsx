@@ -26,10 +26,4 @@ const App = ({ Component, pageProps }) => {
     );
 };
 
-App.getInitialProps = async (ctx) => {
-    const res = await fetch('https://quizchallenge-7mi44lokb-souichitomoe.vercel.app/api/survey');
-    const survey = await res.json();
-    return { pageProps: { survey } };
-};
-
 export default App;
