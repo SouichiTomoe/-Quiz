@@ -13,7 +13,6 @@ const Home: NextPage = (props: any) => {
   }, [props.survey]);
 
   if (!appState) return null;
-  console.log({ appState });
   return (
     <Layout>
       <div>
@@ -31,9 +30,10 @@ const Home: NextPage = (props: any) => {
 };
 
 export const getStaticProps = async () => {
+  //In order to work with Vercel environment variables.
   let url;
   if (process.env.NODE_ENV === 'production') {
-    url = `https://quizchallenge-1k6w34g0s-souichitomoe.vercel.app`;
+    url = `https://quizchallenge.vercel.app/`;
   } else {
     url = process.env.API_URL;
   }
