@@ -12,8 +12,10 @@ const Home: NextPage = (props: any) => {
     );
 };
 
+// The best idea is to store this into the Redux state.
 export const getStaticProps = async () => {
-    const res = await fetch('https://quizchallenge-7mi44lokb-souichitomoe.vercel.app/api/survey');
+    const serverURL = `${process.env.SERVER}/api/survey`;
+    const res = await fetch(serverURL);
     const survey = await res.json();
     return { props: { survey } };
 };

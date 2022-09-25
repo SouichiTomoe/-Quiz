@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Router from 'next/router';
 import { ethers } from 'ethers';
-import { Button } from 'antd';
+import { Button, Divider } from 'antd';
 import { useWeb3, useSwitchNetwork } from '@3rdweb/hooks';
 import style from './Welcome.module.scss';
 
@@ -14,11 +14,6 @@ const Welcome = ({ props }: any) => {
 
     const [currentAccount, setCurrentAccount] = useState<string | undefined>();
     const [chainname, setChainName] = useState<string | undefined>();
-
-    const [balanceInfo, setBalanceInfo] = useState({
-        address: '-',
-        balance: '-',
-    });
 
     useEffect(() => {
         if (!currentAccount || !ethers.utils.isAddress(currentAccount)) return;
@@ -82,6 +77,7 @@ const Welcome = ({ props }: any) => {
                 <h1>
                     Welcome to <span>$Quiz</span>
                 </h1>
+                <Divider />
                 {address ? (
                     <p>
                         Your Balance:{' '}
