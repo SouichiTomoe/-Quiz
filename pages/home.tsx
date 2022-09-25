@@ -14,7 +14,10 @@ const Home: NextPage = (props: any) => {
 
 // The best idea is to store this into the Redux state.
 export const getStaticProps = async () => {
-    return { props: {} };
+    const url = process.env.API_URL;
+    const res = await fetch(`${url}/api/survey`);
+    const survey = await res.json();
+    return { props: { survey } };
 };
 
 export default Home;
