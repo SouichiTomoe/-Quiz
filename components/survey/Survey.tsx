@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Router from 'next/router';
 import { Button, Divider } from 'antd';
-import Timer from '../timer/Timer';
 import styles from './Survey.module.scss';
 import { ethers } from 'ethers';
 import abi from '../../abi/abi.json';
@@ -41,7 +40,7 @@ const Survey = ({ props }: any) => {
             return (
                 <div>
                     <div className={styles.container__questions__quest}>
-                        <Timer props={{ timer: props?.survey?.questions[counter].lifetimeSeconds }} />
+                        <p>{props?.survey?.questions[counter].lifetimeSeconds}</p>
                         <p>{props?.survey?.questions[counter].text}</p>
                         <Image
                             loader={(src) => props.survey.questions[counter].image}
