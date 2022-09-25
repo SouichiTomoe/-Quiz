@@ -29,6 +29,7 @@ const Home: NextPage = (props: any) => {
 };
 
 export const getStaticProps = async () => {
+    console.log('ENV: ', process.env.NODE_ENV);
     const url = process.env.API_URL;
     const res = await fetch(`${url}/api/survey`);
     const survey = await res.json();
