@@ -1,28 +1,23 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import Survey from '../components/survey/Survey';
+import { useAppContext } from '../context';
 
-const Home: NextPage = (props: any) => {
-    return (
-        <Layout>
-            <div>
-                <Survey props={props} />
-            </div>
-        </Layout>
-    );
-};
-
-// The best idea is to store this into the Redux state.
-export const getStaticProps = async () => {
-    let url;
-    if (process.env.NODE_ENV === 'production') {
-        url = `https://quizchallenge-1k6w34g0s-souichitomoe.vercel.app`;
-    } else {
-        url = process.env.API_URL;
-    }
-    const res = await fetch(`${url}/api/survey`);
-    const survey = await res.json();
-    return { props: { survey } };
+const Home: NextPage = () => {
+  const [appState] = useAppContext();
+  if (!appState) return null;
+  return (
+    <Layout>
+      <Head>
+        <title>Challenge App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>
+        <Survey survey={appState} />
+      </div>
+    </Layout>
+  );
 };
 
 export default Home;
