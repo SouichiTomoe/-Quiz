@@ -21,7 +21,6 @@ const App = ({ Component, pageProps }) => {
         // @ts-ignore
         <ThirdwebWeb3Provider supportedChainIds={supportedChainIds} connectors={connectors}>
             <Component {...pageProps} />
-            {console.log({ pageProps })}
         </ThirdwebWeb3Provider>
     );
 };
