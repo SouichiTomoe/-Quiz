@@ -30,7 +30,13 @@ const Home: NextPage = (props: any) => {
 
 export const getStaticProps = async () => {
     console.log('ENV: ', process.env.NODE_ENV);
-    const url = process.env.API_URL;
+    let url;
+    if (process.env.NODE_ENV === 'production') {
+        url = `https://quizchallenge-1k6w34g0s-souichitomoe.vercel.app`;
+    } else {
+        url = process.env.API_URL;
+    }
+
     const res = await fetch(`${url}/api/survey`);
     const survey = await res.json();
     return { props: { survey } };
